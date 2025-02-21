@@ -1,24 +1,10 @@
 <template>
-  <div id="app">
-      <nav>
-          <NavLink url="/" text="Accueil" />
-          <NavLink url="/about" text="À propos" />
-          <NavLink url="/contact" text="Contact" />
-      </nav>
-  </div>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </nav>
+  <router-view/>
 </template>
-
-<script>
-// import HelloWorld from './components/HelloWorld.vue'
-import NavLink from './components/NavLink.vue';
-
-export default {
-  name: 'App',
-  components: {
-    NavLink
-  }
-}
-</script>
 
 <style lang="scss">
 #app {
@@ -27,6 +13,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
 }
 </style>
